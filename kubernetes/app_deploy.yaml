@@ -76,5 +76,5 @@ spec:
                   name: env-secret
                   key: MYSQL_DATABASE
 
-      imagePullSecrets:
-        - name: regcred
+      # imagePullSecrets:
+      #   - name: regcred
