@@ -50,13 +50,13 @@ spec:
       volumes:
         - name: mysql-data
           persistentVolumeClaim:
-            claimName: meetups-data
+            claimName: lounge-data
 
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: meetups-data
+  name: lounge-data
 spec:
   accessModes:
     - ReadWriteMany
@@ -68,7 +68,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: meetup-mysql
+  name: lounge-mysql
 spec:
   type: ClusterIP
   selector:
