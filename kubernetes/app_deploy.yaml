@@ -19,8 +19,8 @@ spec:
     spec:
       initContainers:
         - name: migrate
-          image: alexb04/opensuse-lounge:1.0
-          imagePullPolicy: IfNotPresent
+          image: xelab04/opensuse-lounge:1.0
+          imagePullPolicy: Always
           command: ["php", "artisan", "migrate", "--force"]
           envFrom:
             - configMapRef:
@@ -44,9 +44,9 @@ spec:
                   name: env-secret
                   key: MYSQL_DATABASE
       containers:
-        - image: alexb04/opensuse-lounge:1.0
+        - image: xelab04/opensuse-lounge:1.0
           name: lounge
-          imagePullPolicy: IfNotPresent
+          imagePullPolicy: Always
           ports:
             - containerPort: 8080
           envFrom:
